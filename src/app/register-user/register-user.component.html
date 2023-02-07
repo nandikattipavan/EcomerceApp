@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="card p-2">
+      <form #registerForm="ngForm" (ngSubmit)="registration(registerForm)">
+        <label for="UserName">User Name</label>
+        <input type="text" class="form-control" placeholder="userName" ngModel name="userName"/><br>
+        <label for="UserFirstName">User First Name</label>
+        <input type="text" class="form-control" placeholder="userFirstName" ngModel name="userFirstName"/><br>
+        <label for="UserLastName">User Last Name</label>
+        <input type="text" class="form-control" placeholder="userLastName" ngModel name="userLastName" /><br>
+        <label for="userPassword">User Password</label>
+        <input type="text" class="form-control" placeholder="userPassword" ngModel name="userPassword" /><br>
+
+        <div class="text-center">
+          <button  class="btn btn-outline-info form-control">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

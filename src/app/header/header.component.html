@@ -1,0 +1,52 @@
+<div class="container-fluid">
+  <div class="row">
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <div class="nav navbar-left">
+          <ul class="nav navbar">
+            <a class="navbar-brand">Ecom</a>
+          </ul>
+
+
+        </div>
+        <ul class="nav navbar-right">
+          <li>
+            <button
+              *ngIf="!isLoggedin()"
+              class="btn btn-outline-success my-2 my-sm-0 rounded-0"
+              type="button"
+              routerLink="/login"
+            >
+              login
+            </button>
+          </li>
+          <li>
+            <button
+              *ngIf="isLoggedin()"
+              class="btn btn-outline-danger my-2 my-sm-0 rounded-0"
+              type="button"
+              (click)="logout()"
+            >
+              logout
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<div class="container-fluid" *ngIf="isLoggedin()">
+  <div class="navbar">
+    <div class="navbar-header pull-left">
+      <a *ngIf="isAdmin()" class="navbar-brand" href="#">Admin Dashboard</a>
+      <a *ngIf="!isAdmin()" class="navbar-brand" href="#">User Dashboard</a>
+
+    </div>
+    <div class="navbar-header pull-right">
+      <button type="button" class="btn btn-default navbar-btn" routerLink="/home">Home</button>
+      <button *ngIf="isAdmin()" type="button" class="btn btn-default navbar-btn" routerLink="/addNewProduct" >Add prdouct</button>
+      <button *ngIf="isAdmin()" type="button" class="btn btn-default navbar-btn" routerLink="/showProducts" >Show prdoucts</button>
+    </div>
+</div>
+</div>

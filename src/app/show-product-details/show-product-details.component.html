@@ -1,0 +1,51 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ProductId</th>
+      <th scope="col">ProductName</th>
+      <th scope="col">ProductDescription</th>
+      <th scope="col">ProductDiscountedPrice</th>
+      <th scope="col">ProductActualPrice</th>
+      <th scope="col">Product Images</th>
+      <th scope="col">Product Edit</th>
+      <th scope="col">Product Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of productDetails">
+      <td>{{ product.productId }}</td>
+      <td>{{ product.productName }}</td>
+      <td>{{ product.productDescription | slice : 0 : 25 }}</td>
+      <td>{{ product.productDiscountedPrice }}</td>
+      <td>{{ product.productActulPrice }}</td>
+      <td>
+        <button
+          class="btn btn-info btn-sm rounded-100"
+          (click)="showImages(product)"
+        >
+          Images
+        </button>
+      </td>
+      <td>
+        <button
+          class="btn btn-primary btn-sm rounded-100"
+          (click)="editProduct(product.productId)"
+        >
+          Edit
+        </button>
+      </td>
+      <td>
+        <button
+          class="btn btn-danger btn-sm rounded-10"
+          (click)="deleteProduct(product.productId)"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="text-center mt-4 mb-4 p-2">
+  <button class="btn btn-primary" (click)="loadmoreProducts()">LoadMore ..</button>
+</div>

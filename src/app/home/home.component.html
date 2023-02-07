@@ -1,0 +1,41 @@
+<div class="container ">
+  <div class="row">
+
+
+    <form #searchKeyWord="ngForm" (ngSubmit)="searchByKey(searchKeyWord)">
+      <input   class="form-control" type="text" placeholder="search any product" ngModel name="key">
+      <button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-search"></span>search</button>
+    </form>
+    <div class="grid p-2">
+      <div *ngFor="let p of productDetails" class="col-xs-6 col-sm-3 p-2">
+        <div class="home-page">
+          <img
+            [src]="p.productImages[0].url"
+            class="img-responsive"
+            width="200px"
+            height="400px"
+            alt="productImages"
+          />
+          <div class="mt-3">
+            <p>
+              <b>{{ p.productName }}</b>
+            </p>
+          </div>
+          <div class="mt-3">
+            <p style="white-space: inherit; height:40px; width:288px; overflow:hidden; text-overflow:ellipsis;">
+              {{ p.productDescription }}
+            </p>
+          </div>
+          <div class="mt-3">
+            <p><b> Rs. {{ p.productDiscountedPrice | currency:"INR"}} (offer price)</b><s>{{ p.productActulPrice | currency:"INR"}} </s></p>
+          </div>
+          <div class="mt-3">
+            <button class="btn btn-primary" (click)="showProductDetails(p.productId)">View Details</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div *ngIf="showLoadButton" class="text-center mt-5 mb-5"><button class="btn btn-primary" (click)="loadMorePrdoucts()">LoadMore . . .</button></div>
+  </div>
+</div>

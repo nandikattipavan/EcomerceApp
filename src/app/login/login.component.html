@@ -1,0 +1,41 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="card" style="padding: 20px">
+      <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+        <label for="userName">UserName</label>
+        <input
+          type="text"
+          class="form-control mb-3"
+          placeholder="Enter your userName"
+          ngModel
+          name="userName"
+          id="userName"
+        />
+        <label for="userPassword">Password</label>
+        <input
+          type="password"
+          class="form-control mb-3"
+          placeholder="Enter your password"
+          ngModel
+          name="userPassword"
+          id="userPassword"
+        />
+        <input
+          type="submit"
+          value="Login"
+          class="btn btn-outline-success form-control rounded-0"
+        />
+      </form>
+      <br />
+    </div>
+  </div>
+  <div class="text-center">
+    <br />
+    <button
+      class="btn btn-outline-info btn-sm p-3 rounded-0"
+      (click)="register()"
+    >
+      Create New account
+    </button>
+  </div>
+</div>

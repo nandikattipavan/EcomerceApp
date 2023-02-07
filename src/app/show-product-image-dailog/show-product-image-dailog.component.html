@@ -1,0 +1,14 @@
+<div class="grid">
+  <div
+    class="col-xs-6 col-sm-3 p-2"
+    *ngFor="let file of data.images let i = index"
+  >
+    <img
+      [src]="file.url"
+      class="p-2 img-responsive"
+      width="100px"
+      height="100px"
+      alt="productImages"
+    />
+  </div>
+</div>

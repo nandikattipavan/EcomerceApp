@@ -1,0 +1,7 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; /* Create 2 columns and auto-place rows */
+}
+img{
+  border: 1px solid #eee;
+}
